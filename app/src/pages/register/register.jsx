@@ -27,20 +27,15 @@ const Register = () => {
 
             try {
                 const result = await submitUserDetails(userDetails);
-                alert(result);
+                alert("The user has been registered successfully");
                 console.log(result);
                 Navigate("/login");
             } catch (error) {
-                alert(error);
+                alert("Error in registering");
             }
         }
         
     }
-
-    useEffect(() => {
-        submitUserDetails()
-    }, [])
-
 
     return (
         <div>

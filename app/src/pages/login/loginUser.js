@@ -2,7 +2,7 @@ export const loginUser = async (payload) => {
     const data = JSON.stringify(payload);
     
     try {
-        const response = await fetch("http://localhost:8080/users/login", {
+        const response = await fetch("https://tan-clear-gharial.cyclic.app/users/login", {
             method: "POST",
             body: data,
             headers: {

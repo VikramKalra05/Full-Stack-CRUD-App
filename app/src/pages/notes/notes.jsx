@@ -17,7 +17,7 @@ const Notes = () => {
             navigate("/login");
         }else{
             try {
-                const response = await fetch("http://localhost:8080/notes", {
+                const response = await fetch("https://tan-clear-gharial.cyclic.app/notes", {
                     method: "GET",
                     headers : {
                         "authorization": `${localStorage.getItem("token")}`
@@ -44,7 +44,7 @@ const Notes = () => {
         if(noteDetails){
             const data = JSON.stringify(noteDetails);
             try {
-                const response = await fetch("http://localhost:8080/notes/create", {
+                const response = await fetch("https://tan-clear-gharial.cyclic.app/notes/create", {
                     method: 'POST',
                     body: data,
                     headers: {
@@ -74,7 +74,7 @@ const Notes = () => {
             const data = JSON.stringify(note);
             console.log(id);
             try {
-                const response = await fetch(`http://localhost:8080/notes/update/${id}`, {
+                const response = await fetch(`https://tan-clear-gharial.cyclic.app/notes/update/${id}`, {
                     method: 'PATCH',
                     body: data,
                     headers: {
@@ -101,7 +101,7 @@ const Notes = () => {
 
     const handleDelete = async (id) => {
         try {
-            const response = await fetch(`http://localhost:8080/notes/delete/${id}`, {
+            const response = await fetch(`https://tan-clear-gharial.cyclic.app/notes/delete/${id}`, {
                 method: 'DELETE',
                 headers: {
                     "authorization": `${localStorage.getItem("token")}`
